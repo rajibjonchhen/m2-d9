@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <style>
+     
+      .box {
+          margin: 50px auto;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    width: 200px;
+    height: 200px;
+    background-color: #0000FF;
+    transition: width 2s, height 2s, background-color 5s, transform 2s;
+}
+
+.box:hover {
+    background-color: #FFCCCC;
+    width: 300px;
+    height: 300px;
+    transform: rotate(360deg);
+}
+
+      #delay {
+        font-size: 14px;
+        transition-property: font-size;
+        transition-duration: 4s;
+        transition-delay: 1s;
+      }
+
+      #delay:hover {
+        font-size: 30px;
+        background-color: seagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box  rounded">
+      <p class=" p-3 m-auto">I am practicing the animation. Does it really work???? Push it here to
+        watch it in action. <br><button class="btn btn-primary" id="delay">Push here</button></p>
+      
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
