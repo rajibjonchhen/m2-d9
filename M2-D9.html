@@ -48,6 +48,19 @@ Make sure you check the documentation before creting anything custom.
   }
     }
 
+    .card{
+position: relative;
+    }
+
+.batch{
+font-size: 10px;
+width: 80px;
+position:absolute;
+top:0;
+left:0;
+padding-left: 5px;
+}
+
     </style>
 </head>
 
@@ -63,7 +76,7 @@ Make sure you check the documentation before creting anything custom.
             <div class="col-12">
                 <div class="jumbotron ">
                     <nav class="navbar navbar-expand navbar-light">
-                        <a class="navbar-brand" href="#">Top Of The Europe</a>
+                        <a class="navbar-brand" href="#">Top Music Of The Europe</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
@@ -74,7 +87,7 @@ Make sure you check the documentation before creting anything custom.
                               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#">Travel Guide</a>
+                              <a class="nav-link" href="#">Musice</a>
                             </li>
                             <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -97,7 +110,7 @@ Make sure you check the documentation before creting anything custom.
                           </form>
                         </div>
                       </nav>
-                    <h1 class="display-4 mt-5">Travel world!</h1>
+                    <h1 class="display-4 mt-5">Music World!</h1>
                     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for <br> calling extra attention to featured content or information.</p>
                     <hr class="my-4">
                     <p>It uses utility classes for typography and spacing to <br> space content out within the larger container.</p>
@@ -111,11 +124,97 @@ Make sure you check the documentation before creting anything custom.
         Use a Bootstrap Card to contain every album in the favorite list you previously created.
         Use the elements of a card bootstrap provides you with to display nicely the album informations such as: album title, artist, year, etc..
     -->
-
     <!-- EXERCISE 3
         Foreach album in the favorite list, place a badge on the top-left corner of the album with the genre of the music
     -->
 
+    <div class="container-fluid">
+        <h2>Favorite List</h2>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card">
+                    <img src="./asset/1.jpeg" class="card-img-top" alt="music album">
+                    <span class="batch bg-warning rounded-lg">Old Collection</span>
+                    <div class="card-body">
+                      <h5 class="card-title">60s, 70s, 80s Collection</h5>
+                      <p class="card-text">Artist: Benjamin Franklin</p>
+                      <p class="card-text">Year : 1960</p>
+                      <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card">
+                    <img src="./asset/2.jpeg" class="card-img-top" alt="music album 60s">
+                    <span class="batch bg-warning rounded-lg">Old Collection</span>
+                    <div class="card-body">
+                      <h5 class="card-title">60s, 70s rock hit</h5>
+                      <p class="card-text">Artist: Benjamin Franklin</p>
+                      <p class="card-text">Year : 1960</p>                   
+                       <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card">
+                    <img src="./asset/3.jpeg" class="card-img-top" alt="music album">
+                    <span class="batch bg-warning rounded-lg">Old Collection</span>
+                    <div class="card-body">
+                      <h5 class="card-title">60s & 70s hit pop </h5>
+                      <p class="card-text">Artist: Venjamin Branklip</p>
+                      <p class="card-text">Year : 1960</p>               
+                        <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card" >
+                    <img src="./asset/4.jpeg" class="card-img-top" alt="music album">
+                    <span class="batch bg-warning rounded-lg">1900</span>
+                    <div class="card-body">
+                      <h5 class="card-title">Listeners Choice</h5>
+                      <p class="card-text">Artist: Enjamin Cranklin</p>
+                      <p class="card-text">Year : 1960</p>
+                        <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card">
+                    <img src="./asset/5.jpeg" class="card-img-top" alt="music album">
+                    <span class="batch bg-warning rounded-lg">Old Collection</span>
+                    <div class="card-body">
+                      <h5 class="card-title">Retro Party</h5>
+                      <p class="card-text">Artist: Adam Franklin</p>
+                      <p class="card-text">Year : 1960</p>
+                    <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2">
+                <div class="card">
+                    <img src="./asset/6.jpeg" class="card-img-top" alt="music album">
+                    <span class="batch bg-warning rounded-lg">Fusion Type</span>
+                    <div class="card-body">
+                      <h5 class="card-title">Guitar</h5>
+                      <p class="card-text">Artist: Adam Franklin</p>
+                      <p class="card-text">Year : 1960</p>
+                    <a href="#" class="btn btn-primary">Listen</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- EXERCISE 4
         Create a new section with an album tracklist inside a Bootstrap table.
         The row colors of the table must be alternated.
@@ -123,7 +222,43 @@ Make sure you check the documentation before creting anything custom.
         There should be a column for the track order number, one for the title and one for the track duration.
         (If you want, you can also add extra columns)
     -->
+    <table class=" albumCollection table mt-3">
+        <thead>
+          <tr>
+            <th scope="col">Order Number</th>
+            <th scope="col">Title</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Download</th>
+            <th scope="col">Delete Album</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td> <button class="btn btn-success">Download</button> </td>
+            <td> </td>
+            
 
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td><button class="btn btn-success">Download</button> </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td><button class="btn btn-success">Download</button> </td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
     <!-- EXERCISE 5
         Add a DELETE bootstrap button at the end of each row of the tracklist. 
         Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
@@ -132,6 +267,21 @@ Make sure you check the documentation before creting anything custom.
         Make only one button visible at a time, for each row, when the single row gets hovered. 
         Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
     -->
+        <script>
+            const deleteAlbumBtn = function(){
+                let td = document.querySelectorAll(".albumCollection tr td:last-of-type")
+                for(let i = 0; i < td.length; i++){
+                    td[i].innerHTML= `<td> <button id="deleteBtn"onclick="deleteAlbum(event)" class="btn btn-secondary">-</button> </td>`
+                }
+
+            }
+
+            deleteAlbumBtn()
+
+            const deleteAlbum = function(){
+               
+            }
+        </script>
 
     <!-- EXERCISE 6
         Add an "Add Track" button under the tracklist of the album. 
