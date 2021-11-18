@@ -61,6 +61,9 @@ left:0;
 padding-left: 5px;
 }
 
+#newAlbumBtn:hover {
+    box-shadow: 0 5px grey ;
+}
     </style>
 </head>
 
@@ -222,43 +225,55 @@ padding-left: 5px;
         There should be a column for the track order number, one for the title and one for the track duration.
         (If you want, you can also add extra columns)
     -->
-    <table class=" albumCollection table mt-3">
-        <thead>
-          <tr>
-            <th scope="col">Order Number</th>
-            <th scope="col">Title</th>
-            <th scope="col">Duration</th>
-            <th scope="col">Download</th>
-            <th scope="col">Delete Album</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td> <button class="btn btn-success">Download</button> </td>
-            <td> </td>
-            
+    <div class="albumList container">
+        <table class=" albumCollection table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Order Number</th>
+                <th scope="col">Title</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Download</th>
+                <th scope="col">Delete Album</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td> <button class="btn btn-success">Download</button> </td>
+                <td> </td>
+                
+    
+                
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td><button class="btn btn-success">Download</button> </td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td><button class="btn btn-success">Download</button> </td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 
-            
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td><button class="btn btn-success">Download</button> </td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td><button class="btn btn-success">Download</button> </td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+    <footer>
+        <div class="container-fluid bg-primary m mt-5">
+            <div class="row">
+                <div class="col-12 col-md-3">Contact Us</div>
+                <div class="col-12 col-md-3"> Other Albums</div>
+                <div class="col-12 col-md-3">Some Links</div>
+            </div>
+        </div>
+    </footer>
     <!-- EXERCISE 5
         Add a DELETE bootstrap button at the end of each row of the tracklist. 
         Attach the functionality to remove its row when it gets clicked. (Requires DOM manipulation)  
@@ -266,6 +281,7 @@ padding-left: 5px;
         ## EXTRA CSS CHALLENGE ##
         Make only one button visible at a time, for each row, when the single row gets hovered. 
         Animate it with a fade-in effect upon the user hovering and fade-out when he/she goes away from it.
+
     -->
         <script>
             const deleteAlbumBtn = function(){
@@ -281,25 +297,38 @@ padding-left: 5px;
             const deleteAlbum = function(){
                
             }
+
+    // EXERCISE 6
+      //  Add an "Add Track" button under the tracklist of the album. 
+        //It should have a nice shadow transition when its hovered (with the box-shadow property) 
+        //to look like as if the button was elevating itself.
+            const addAlbumBtn = function(){
+                let addbtn = document.querySelector(".albumList")
+                let div = document.createElement("div")
+                 div.innerHTML=`<button id="newAlbumBtn" onclick="addAlbum(event)" class="btn btn-secondary btn-lg btn-block">Add Album</button>`
+                addbtn.appendChild(div)
+            }
+            addAlbumBtn()
+
+            // EXERCISE 7
+        // On the click of "Add Track" button, a modal should appear.
+      //  (check in the documentation the modal + button example)
+        // The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
+        // - Track number
+        // - Track title
+        // - Track duration
+        // The fields should be inside an Input Group and divided in 2 columns.
+            const addAlbum = function(eventData){
+                let tbody = document.querySelector(".albumCollection .tbody")
+            tbody += `<tr><td>101</td> <td>Hyper</td> <td>Text</td></tr>`
+            }
+        
+
         </script>
 
-    <!-- EXERCISE 6
-        Add an "Add Track" button under the tracklist of the album. 
-        It should have a nice shadow transition when its hovered (with the box-shadow property) 
-        to look like as if the button was elevating itself.
-    -->
+   
 
-    <!-- EXERCISE 7
-        On the click of "Add Track" button, a modal should appear.
-        (check in the documentation the modal + button example)
         
-        The modal shall contain single input fields (avoid using a <form> to wrap the inputs) with:
-        - Track number
-        - Track title
-        - Track duration
-
-        The fields should be inside an Input Group and divided in 2 columns.
-    -->
 
     <!-- ############### -->
     <!-- ###  EXTRA  ### -->
@@ -313,12 +342,18 @@ padding-left: 5px;
         https://getbootstrap.com/docs/4.6/components/alerts/
         [EXTRA] Make the message disappear after 5 seconds
         https://www.w3schools.com/jsref/met_win_settimeout.asp
+
+
     -->
 
     <!-- EXERCISE 9
         Alert the user with a success message when the track gets added, or when a track gets deleted.
      -->
-
+            <script>
+                    const alertUser = function(eventData){
+                        alert()
+                    }
+            </script>
     <!-- EXERCISE 10
         Considering the "Add Track" functionality that you've created on ex. 8: 
          - The new list-element added to the list should appear with a fade-in effect
