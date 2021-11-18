@@ -34,8 +34,10 @@ Make sure you check the documentation before creting anything custom.
         background-size: cover;
         width: 100%;
     }
+
+
     .fade-in {
-  animation: fade-in 1s 1s ease-in both;
+  animation: fade-in 1s 0.05s ease-in both;
 }
 
     @keyframes fade-in{
@@ -47,6 +49,8 @@ Make sure you check the documentation before creting anything custom.
     opacity: 1;
   }
     }
+
+
 
     .card{
 position: relative;
@@ -61,14 +65,71 @@ left:0;
 padding-left: 5px;
 }
 
-#newAlbumBtn:hover {
-    box-shadow: 0 5px grey ;
+#addNewAlbumBtn:hover {
+    box-shadow : 10px 10px 10px 10px rgba(54, 44, 44, 0.267) ;
+    
+}
+
+.deleteBtn{
+    opacity:0;
+   
+}
+@keyframes animation-in{
+        from {
+            
+            
+        }
+        to {
+            
+            transform: rotateY(180deg);
+            box-shadow: 2px 2px  3px 3px rgba(2, 109, 55, 0.233);
+        }
+    }
+
+.albumList tbody tr:hover .deleteBtn{
+opacity:1;
+animation: animation-in 0s 1s ease-in both;
+
 }
     </style>
 </head>
 
 <body>
-   
+    <nav class="navbar navbar-expand navbar-light">
+        <a class="navbar-brand" href="#">Top Music Of Europe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Musice</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Destination
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Europe</a>
+                <a class="dropdown-item" href="#">North America</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Choose in map</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
     <!-- EXERCISE 1
         Create a Jumbotron section with a quick explanation / image of the website.
         Make it appear with a fade-in animation effect when the page loads.
@@ -78,41 +139,7 @@ padding-left: 5px;
         <div class="row">
             <div class="col-12">
                 <div class="jumbotron ">
-                    <nav class="navbar navbar-expand navbar-light">
-                        <a class="navbar-brand" href="#">Top Music Of The Europe</a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                      
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                          <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="#">Musice</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                                Destination
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Europe</a>
-                                <a class="dropdown-item" href="#">North America</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Choose in map</a>
-                              </div>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link disabled">Disabled</a>
-                            </li>
-                          </ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
-                        </div>
-                      </nav>
+                    
                     <h1 class="display-4 mt-5">Music World!</h1>
                     <p class="lead">This is a simple hero unit, a simple jumbotron-style component for <br> calling extra attention to featured content or information.</p>
                     <hr class="my-4">
@@ -243,9 +270,7 @@ padding-left: 5px;
                 <td>Otto</td>
                 <td> <button class="btn btn-success">Download</button> </td>
                 <td> </td>
-                
-    
-                
+            
               </tr>
               <tr>
                 <th scope="row">2</th>
@@ -287,15 +312,20 @@ padding-left: 5px;
             const deleteAlbumBtn = function(){
                 let td = document.querySelectorAll(".albumCollection tr td:last-of-type")
                 for(let i = 0; i < td.length; i++){
-                    td[i].innerHTML= `<td> <button id="deleteBtn"onclick="deleteAlbum(event)" class="btn btn-secondary">-</button> </td>`
+                    td[i].innerHTML= `<td> <button onclick="deleteAlbum(event)" class="deleteBtn btn btn-secondary animation-in">-</button> </td>`
                 }
 
             }
 
             deleteAlbumBtn()
 
-            const deleteAlbum = function(){
-               
+            const deleteAlbum = function(eventData){
+              
+             let row = document.querySelectorAll(".albumList>table tbody tr")  
+             let    deleteRowBtn = document.querySelectorAll(".albumList>table tbody tr td:last-of-type button")
+             for(let i = 0; i < row.length; i++){
+                deleteRowBtn[i].onclick = function(){row[i].style.display ="none"} 
+             }
             }
 
     // EXERCISE 6
@@ -305,7 +335,7 @@ padding-left: 5px;
             const addAlbumBtn = function(){
                 let addbtn = document.querySelector(".albumList")
                 let div = document.createElement("div")
-                 div.innerHTML=`<button id="newAlbumBtn" onclick="addAlbum(event)" class="btn btn-secondary btn-lg btn-block">Add Album</button>`
+                 div.innerHTML=`<button id="addNewAlbumBtn" onclick="addAlbum(event)" class="btn btn-secondary btn-lg btn-block">Add Album</button>`
                 addbtn.appendChild(div)
             }
             addAlbumBtn()
@@ -319,11 +349,16 @@ padding-left: 5px;
         // - Track duration
         // The fields should be inside an Input Group and divided in 2 columns.
             const addAlbum = function(eventData){
-                let tbody = document.querySelector(".albumCollection .tbody")
-            tbody += `<tr><td>101</td> <td>Hyper</td> <td>Text</td></tr>`
+                let addNewAlbumBtn = document.querySelector("#addNewAlbumBtn")
+                
+                addNewAlbumBtn.onclick = function(){
+                    let tbody = document.querySelector(".albumCollection .tbody")
+                    tbody.innerHTML += `<tr><th>101</th> <td>Hyper</td> <td>Text</td> <td></td><td></td></tr>`
+
+                }
             }
         
-
+            
         </script>
 
    
