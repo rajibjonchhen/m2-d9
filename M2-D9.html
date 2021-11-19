@@ -380,6 +380,7 @@ Make sure you check the documentation before creting anything custom.
             i
           ].innerHTML = `<td> <button onclick="deleteAlbum(event)" class="deleteBtn btn btn-secondary animation-in">-</button> </td>`;
         }
+       
       };
 
       deleteAlbumBtn();
@@ -442,6 +443,7 @@ Make sure you check the documentation before creting anything custom.
           let tbody = document.querySelector(".albumCollection.table tbody");
           tbody.innerHTML += `<tr><th>${numb}</th> <td>${title}</td> <td>${duration}</td> <td><button class="btn btn-success">Download</button></td><td></td></tr>`;
           deleteAlbumBtn()
+          
         };
       };
 
@@ -480,11 +482,7 @@ Make sure you check the documentation before creting anything custom.
     <!-- EXERCISE 9
         Alert the user with a success message when the track gets added, or when a track gets deleted.
      -->
-    <script>
-      const alertUser = function (eventData) {
-        alert();
-      };
-    </script>
+    
     <!-- EXERCISE 10
         Considering the "Add Track" functionality that you've created on ex. 8: 
          - The new list-element added to the list should appear with a fade-in effect
